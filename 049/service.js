@@ -29,6 +29,20 @@ function getAll() {
     return arr
 };
 
+
+function getByiD(id) {
+   const arrFilt =  arr.filter(el => el.id == id); 
+   return arrFilt
+}
+
+function createData (name, age) {
+    arr.push({name: name, age: age}); 
+    return arr;
+}
 module.exports = {
-    getAll
+    getAll, 
+    getByiD, 
+    createData
 }; 
+
+
