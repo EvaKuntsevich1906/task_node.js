@@ -102,21 +102,28 @@ function postAll(label, category, priority) {
     return arr
 };
 
-function putById(label, category, priority) {
+function putById(id, label, category, priority) {
     const obj = {
-        id: label.toLowerCase(),
+        id: id,
         label: label,
         category: category,
         priority: priority
     };
-    const filterarr = arr.filter(el => el.id == id);
+    const filterarr = arr.filter(el => el.id != id);
     return filterarr
 }
+
+function deleteById(id) {
+    const filterarr = arr.filter(el => el.id != id);
+    return filterarr
+}
+
 
 
 module.exports = {
     getAll,
     getById,
     postAll, 
-    putById
+    putById, 
+    deleteById
 }
